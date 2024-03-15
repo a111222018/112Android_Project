@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">w3_AndroidProject_Counter</string>
+    <string name="initial_value">0</string>
+    <string name="add">增加</string>
+    <string name="reset">歸零</string>
+    <string name="reduce">減少</string>
+</resources>
