@@ -18,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
         EditText id=(EditText) findViewById(R.id.editTextID);
         EditText pw=(EditText) findViewById(R.id.editTextPW);
         EditText result=(EditText) findViewById(R.id.editTextResult);
-        if(id.getText().toString()=="anderson"){
-            if(pw.getText().toString()=="123456"){
+        if(id.getText().toString().equals("anderson")){
+            if(pw.getText().toString().equals("123456")){
                 result.setText("登入成功");
             }
             else{
