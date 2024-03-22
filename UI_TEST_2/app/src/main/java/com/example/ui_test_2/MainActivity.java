@@ -1,4 +1,4 @@
-package com.example.ui_test;
+package com.example.ui_test_2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+
+import com.example.ui_test_2.DisplayStringActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         EditText EditTextinput=(EditText) findViewById(R.id.editTextInput);
         String input=EditTextinput.getText().toString();
 
-        Intent intent=new Intent(this,DisplayStringActivity.class);
+        Intent intent=new Intent(this, DisplayStringActivity.class);
         intent.putExtra("userInput",input);
         startActivity(intent);
     }
