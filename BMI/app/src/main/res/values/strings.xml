@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BMI</string>
+    <string name="app_name">BMII</string>
     <string name="height">身高(CM):</string>
     <string name="weight">體重(KG):</string>
     <string name="clear">清除</string>
