@@ -25,13 +25,15 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     }
 
     @Override
-    public boolean onTouch(View v, MotionEvent event) {
-        int act=event.getAction();
-        switch (act){
+    public boolean onTouch (View v, MotionEvent event) {
+        switch (event.getAction()){
+
             case MotionEvent.ACTION_DOWN:
                 txtoutput.setText("ACTION_DOWN");
                 txtoutput.setTextColor(Color.RED);
                 break;
+
+
             case MotionEvent.ACTION_UP:
                 txtoutput.setText("ACTION_UP");
                 txtoutput.setTextColor(Color.GREEN);
@@ -43,6 +45,6 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
                 txtoutput.setTextColor(Color.BLUE);
                 break;
         }
-        return false;
+        return true;
     }
 }
