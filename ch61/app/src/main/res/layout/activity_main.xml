@@ -32,13 +32,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="男" />
+            android:text="@string/male" />
 
         <RadioButton
             android:id="@+id/rdbGirl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="女" />
+            android:text="@string/female" />
     </RadioGroup>
 
     <RadioGroup
@@ -55,19 +55,19 @@
             android:id="@+id/rdbAdult"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="全票" />
+            android:text="@string/regularticket" />
 
         <RadioButton
             android:id="@+id/rdbChild"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="兒童票" />
+            android:text="@string/childticket" />
 
         <RadioButton
             android:id="@+id/rdbStudent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="學生票" />
+            android:text="@string/studentticket" />
     </RadioGroup>
 
     <Button
@@ -90,5 +90,14 @@
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="64dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
