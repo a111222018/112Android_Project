@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import com.example.ui_test_2.DisplayStringActivity;
 
 public class MainActivity extends AppCompatActivity {
 

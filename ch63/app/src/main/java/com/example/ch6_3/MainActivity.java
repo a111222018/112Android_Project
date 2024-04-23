@@ -2,11 +2,15 @@ package com.example.ch6_3;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.media.MediaDrm;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -19,8 +23,10 @@ public class MainActivity extends AppCompatActivity
     private RadioGroup rg;
     private RadioGroup rt;
 
-    private  String str = "";
+    private Button submit;
+    private  String str = "0";
     private  String gender="";
+    private String[] ticketype={"",""};
     private  String ticket="";
     private  int sum=0;
     @Override
@@ -36,6 +42,7 @@ public class MainActivity extends AppCompatActivity
         rt.setOnCheckedChangeListener(this);
         txt = (EditText) findViewById(R.id.txtName);
         txt.addTextChangedListener(this);
+
     }
     @Override
     public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -61,18 +68,40 @@ public class MainActivity extends AppCompatActivity
     }
     public void show(int i,String g) {
 
-        str = txt.getText().toString() + "張";
+
         RadioButton selcted = (RadioButton) findViewById(i);
         if(g=="rg"){
             gender= (String) selcted.getText();
+
         }
         else if(g=="rt"){
             ticket= (String) selcted.getText();
+            ticketype = ticket.split("\n");
+        }
+        else{
+            if(!txt.getText().toString().equals("")){
+                //Log.v("test",txt.getText().toString());
+
+                str = txt.getText().toString() + "張";
+                sum=Integer.parseInt(txt.getText().toString())*Integer.parseInt(ticketype[1]);
+
+
+            }
+            else{
+                //Log.v("test1",txt.getText().toString());
+                str = "0" + "張";
+                sum=0;
+            }
+
 
         }
 
-        String[] ticketype = ticket.split("\n");
-        sum=Integer.parseInt(ticketype[0])*Integer.parseInt(ticketype[1]);
+
         output.setText(gender+"\n"+ticketype[0]+str+"\n"+"金額"+sum );
+    }
+    public void submit(View view){
+        Intent intent=new Intent(this, result.class);
+        intent.putExtra("result",output.getText());
+        startActivity(intent);
     }
 }
