@@ -1,3 +1,4 @@
+//a111222018
 package com.example.ch6_3;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity
     private String[] ticketype={"",""};
     private  String ticket="";
     private  int sum=0;
+
+    private int n=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +43,8 @@ public class MainActivity extends AppCompatActivity
         rt = (RadioGroup) findViewById(R.id.rgticket);
         rg.setOnCheckedChangeListener(this);
         rt.setOnCheckedChangeListener(this);
-        txt = (EditText) findViewById(R.id.txtName);
+        txt = (EditText) findViewById(R.id.editTextNumber);
+        txt.setText("");
         txt.addTextChangedListener(this);
 
     }
@@ -77,9 +81,18 @@ public class MainActivity extends AppCompatActivity
         else if(g=="rt"){
             ticket= (String) selcted.getText();
             ticketype = ticket.split("\n");
+            if(txt.getText().toString().equals("")){
+                n=0;
+
+            }
+            //Log.v("test1",txt.getText().toString());
+            else {
+                n = Integer.parseInt(txt.getText().toString());
+            }
+            sum=n*Integer.parseInt(ticketype[1]);
         }
         else{
-            if(!txt.getText().toString().equals("")){
+            if(!txt.getText().toString().equals("") & gender!="" & ticketype[1]!=""){
                 //Log.v("test",txt.getText().toString());
 
                 str = txt.getText().toString() + "張";
@@ -88,8 +101,13 @@ public class MainActivity extends AppCompatActivity
 
             }
             else{
+                if(txt.getText().toString().equals("")){
+                    str = "0" + "張";
+                }
                 //Log.v("test1",txt.getText().toString());
-                str = "0" + "張";
+                else {
+                    str = txt.getText().toString() + "張";
+                }
                 sum=0;
             }
 
