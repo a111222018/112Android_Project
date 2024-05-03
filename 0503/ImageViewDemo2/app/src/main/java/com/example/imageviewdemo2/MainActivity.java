@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         img2=(ImageView) findViewById(R.id.imageView);
         img3=(ImageView) findViewById(R.id.imageView2);
         img4=(ImageView) findViewById(R.id.imageView3);
+        RadioGroup rdbGroup=(RadioGroup) findViewById(R.id.rgImages);
+        rdbGroup.setOnCheckedChangeListener(this);
     }
 
 
