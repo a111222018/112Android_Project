@@ -2,7 +2,10 @@ package com.example.alertdialog;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -10,5 +13,50 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button btn = findViewById(R.id.btnabout);
+        btn.setOnClickListener(v -> {
+            new AlertDialog.Builder(MainActivity.this)
+                    .setTitle("關於本書")
+                    .setMessage("Android程式設計與應用\n作者: 陳俊榮\n出版社: 旗標\n出版日期: 2021/07/01\n定價: 380元\nISBN: 9789863126809\n")
+                    .setCancelable(true)
+                    .setPositiveButton("OK", (dialog, which) -> dialog.dismiss())
+                    .show();
+        });
+
+        Button bunexit = findViewById(R.id.btnexit);
+        bunexit.setOnClickListener(v -> {
+            new AlertDialog.Builder(MainActivity.this)
+                    .setTitle("確認視窗")
+                    .setMessage("確定要結束應用程式嗎?")
+                    .setCancelable(true)
+                    .setPositiveButton("yes", (dialog, which) -> finish())
+                    .setNegativeButton("No", (dialog, which) -> Toast.makeText(MainActivity.this, "取消結束應用程式", Toast.LENGTH_LONG).show())
+                    .show();
+        });
+
+        Button btncolor = findViewById(R.id.btncolor);
+        btncolor.setOnClickListener(v -> {
+            new AlertDialog.Builder(MainActivity.this)
+                    .setTitle("選擇顏色")
+                    .setCancelable(true)
+                    .setItems(new String[]{"紅色", "綠色", "藍色","粉色"}, (dialog, which) -> {
+                        switch (which) {
+                            case 0:
+                               btncolor.setBackgroundColor(0xFFFF0000);
+                                break;
+                            case 1:
+                                btncolor.setBackgroundColor(0xFF00FF00);
+                                break;
+                            case 2:
+                                btncolor.setBackgroundColor(0xFF0000FF);
+                                break;
+                            case 3:
+                                btncolor.setBackgroundColor(0xFFFF00FF);
+                                break;
+                        }
+                    })
+                    .show();
+        });
     }
 }
