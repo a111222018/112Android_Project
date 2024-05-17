@@ -36,4 +36,25 @@
         app:layout_constraintEnd_toEndOf="@+id/btnexit"
         app:layout_constraintStart_toStartOf="@+id/btnexit"
         app:layout_constraintTop_toBottomOf="@+id/btnexit" />
+
+    <Button
+        android:id="@+id/btnselect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="104dp"
+        android:text="選擇手機"
+        app:layout_constraintEnd_toEndOf="@+id/btncolor"
+        app:layout_constraintStart_toStartOf="@+id/btncolor"
+        app:layout_constraintTop_toBottomOf="@+id/btncolor" />
+
+    <TextView
+        android:id="@+id/txtoutput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/btnselect"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/btnselect"
+        app:layout_constraintTop_toBottomOf="@+id/btnselect" />
 </androidx.constraintlayout.widget.ConstraintLayout>
