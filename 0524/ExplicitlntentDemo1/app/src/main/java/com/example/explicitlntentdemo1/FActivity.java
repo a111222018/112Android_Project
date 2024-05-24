@@ -37,7 +37,7 @@ public class FActivity extends AppCompatActivity {
             plac=bundle.getString("place");
             f=c*9/5+32;
             TextView output=(TextView) findViewById(R.id.lblOutput);
-            output.setText("Temperature in "+plac+" is "+f+" F");
+            output.setText(plac+"溫度為華氏"+f+"F");
         }
     }
 }
