@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    class ResultContract extends ActivityResultContract<Boolean, String> {
+    class ResultContract extends ActivityResultContract<Boolean, String> {//Boolean是傳送資料的型態，String是接收資料的型態
 
         @NonNull
         @Override
